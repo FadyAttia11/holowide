@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+    include("connection.php");
+    include("functions.php");
+
+    $user_data = check_login($con);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,11 +49,11 @@
     <nav class="nav-menu">
       <ul>
         <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bx bx-server"></i> <span>Services</span></a></li>
-        <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        <li><a href="login.php"><i class="bx bx-file-blank"></i> <span>Login</span></a></li>
+        <li><a href="cost-determ.php"><i class="bx bx-user"></i> <span>Cost Determination</span></a></li>
+        <li><a href="accepted-events.php"><i class="bx bx-book-content"></i> <span>Accepted Events</span></a></li>
+        <li><a href="accepted-plans.php"><i class="bx bx-server"></i> <span>Accepted Marketing Plans</span></a></li>
+        <li><a href="#"><i class="bx bx-envelope"></i> <span>Admin: <?php echo $user_data['user_name'] ?></span></a></li>
+        <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 

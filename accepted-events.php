@@ -6,8 +6,8 @@ session_start();
 
     $user_data = check_login($con);
 
-    $all_events_query = "select * from broadcasts where type = 'Public'";
-    $all_events = mysqli_query($con, $all_events_query);
+    $accepted_events_query = "select * from broadcasts where state = 'accepted'";
+    $accepted_events = mysqli_query($con, $accepted_events_query);
 
 ?>
 
@@ -53,9 +53,10 @@ session_start();
   <nav class="nav-menu">
     <ul>
       <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
-      <li class="active"><a href="all-events.php"><i class="bx bx-user"></i> <span>View Upcoming Events</span></a></li>
-      <li><a href="booked-events.php"><i class="bx bx-book-content"></i> <span>My Booked Events</span></a></li>
-      <li><a href="#"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
+      <li><a href="cost-determ.php"><i class="bx bx-user"></i> <span>Cost Determination</span></a></li>
+      <li class="active"><a href="accepted-events.php"><i class="bx bx-book-content"></i> <span>Accepted Events</span></a></li>
+      <li><a href="accepted-plans.php"><i class="bx bx-server"></i> <span>Accepted Marketing Plans</span></a></li>
+      <li><a href="#"><i class="bx bx-envelope"></i> <span>Admin: <?php echo $user_data['user_name'] ?></span></a></li>
       <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
     </ul>
   </nav><!-- .nav-menu -->
@@ -66,14 +67,14 @@ session_start();
 
     <div class="container">
         <div class="portfolio-description">
-            <h2 class="mb-5">Upcoming Events</h2>
+            <h2 class="mb-5">Accepted Events</h2>
             <div class="row">
                 <?php
-                    while($row = mysqli_fetch_array($all_events)) {
+                    while($row = mysqli_fetch_array($accepted_events)) {
                 ?>
 
                 <div class="col-6">
-                    <a href=<?php echo "event.php?id=". $row['id'] ?>><img src=<?php echo "./uploads/".$row['image'] ?> alt="" style="width: 50%; border: 1px solid #cda45e;"></a>
+                    <a href=<?php echo "event-admin.php?id=". $row['id'] ?>><img src=<?php echo "./uploads/".$row['image'] ?> alt="" style="width: 50%; border: 1px solid #cda45e;"></a>
                     <h5>Name: <?php echo $row['broad_name'] ?></h5>
                 </div>
 
