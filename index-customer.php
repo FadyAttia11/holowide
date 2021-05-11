@@ -50,7 +50,7 @@ session_start();
       <ul>
         <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="all-events.php"><i class="bx bx-user"></i> <span>View Upcoming Events</span></a></li>
-        <li><a href="booked-events.php"><i class="bx bx-user"></i> <span>My Booked Events</span></a></li>
+        <li><a href="booked-events.php"><i class="bx bx-book-content"></i> <span>My Booked Events</span></a></li>
         <li><a href="#"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
         <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
       </ul>

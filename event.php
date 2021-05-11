@@ -5,6 +5,7 @@ session_start();
     include("functions.php");
 
     $user_data = check_login($con);
+    $customer_name = $user_data['user_name'];
     $event_id = $_GET["id"];
 
     $event_query = "select * from broadcasts where id = '$event_id'";
@@ -50,23 +51,22 @@ session_start();
 <body>
 
     <!-- ======= Mobile nav toggle button ======= -->
-    <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="d-flex flex-column justify-content-center">
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex flex-column justify-content-center">
 
-    <nav class="nav-menu">
-        <ul>
-        <li><a href="index.php"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="new-event.php"><i class="bx bx-user"></i> <span>Add New Event</span></a></li>
-        <li class="active"><a href="my-requests.php"><i class="bx bx-book-content"></i> <span>My Requests</span></a></li>
-        <li><a href="marketing-plans.php"><i class="bx bx-server"></i> <span>Marketing Plans</span></a></li>
-        <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
-        <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
-        </ul>
-    </nav><!-- .nav-menu -->
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+      <li class="active"><a href="all-events.php"><i class="bx bx-user"></i> <span>View Upcoming Events</span></a></li>
+      <li><a href="booked-events.php"><i class="bx bx-book-content"></i> <span>My Booked Events</span></a></li>
+      <li><a href="#"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
+      <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
+    </ul>
+  </nav><!-- .nav-menu -->
 
-    </header><!-- End Header -->
+</header><!-- End Header -->
 
   <main id="main">
 
@@ -92,6 +92,16 @@ session_start();
           </div>
         </div>
 
+        <?php 
+            $booked_query = "select * from bookings where id = '$event_id' and customer_name = '$customer_name'";
+            $booked = mysqli_query($con, $booked_query);
+
+            if($booked && mysqli_num_rows($booked) > 0) {
+                
+            
+        ?>
+            <h2 class="mt-5">You had already Booked this event!</h2>
+        <?php } else { ?>
 
         <h3>Book This Event Online</h3>
         <p>(Only Pay 10% of the cost as a deposit)</p>
@@ -137,7 +147,7 @@ session_start();
                             $result = mysqli_query($con, $query);
 
                             if($result) {
-                                header('Location: index.php');
+                                header('Location: booked-events.php');
                             }
                         } else {
                             echo "error adding money to our account";
@@ -146,6 +156,8 @@ session_start();
                 }
             ?>
         </form>
+
+        <?php } ?>
 
       </div>
     </section><!-- End Portfolio Details -->
