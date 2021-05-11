@@ -62,39 +62,69 @@ session_start();
 
   <main id="main">
 
-    <!-- ======= Portfolio Details ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container" data-aos="fade-up">
+  <section style="margin-top: 100px;">
+    <div class="container mt-3" style="max-width: 700px;">
+        <h3>Add New Event</h3>
+        
+        <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-        <div class="row">
+        <label>Event Name:</label>
+        <input type="text" class="form-control mb-3" placeholder="Ex: broadcasting world cup final match" name="broad_name" required>
 
-          <div class="col-lg-8">
-            <h2 class="portfolio-title">This is an example of portfolio detail</h2>
-            <div class="owl-carousel portfolio-details-carousel">
-              <img src="assets/img/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-details-2.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-4 portfolio-info">
-            <h3>Project information</h3>
-            <ul>
-              <li><strong>Category</strong>: Web design</li>
-              <li><strong>Client</strong>: ASU Company</li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-            </ul>
-
-            <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            </p>
-          </div>
-
+        <div class="row mb-3">
+        <div class="col">
+            <label>Event Date:</label>
+            <input type="date" class="form-control" placeholder="Ex: 12-7-2021" name="broad_date" required>
+        </div>
+        <div class="col">
+            <label>Event Time:</label>
+            <input type="text" class="form-control" placeholder="Ex: 7pm" name="time" required>
+        </div>
         </div>
 
-      </div>
-    </section><!-- End Portfolio Details -->
+        <div class="row mb-3">
+        <div class="col">
+            <label>Ticket Price:</label>
+            <input type="number" class="form-control" placeholder="Ex: 700" name="ticket_price" required>
+        </div>
+        <div class="col">
+            <label>Event Type:</label>
+            <select class="form-control mb-3" name="type" required>
+                <option>Public</option>
+                <option>Private</option>
+            </select> 
+        </div>
+        </div>
+
+        <label>Event Location:</label>
+        <textarea class="form-control mb-3" rows="5" name="location" placeholder="Ex: Cairo Festival Mall" required></textarea>
+
+
+        <button type="submit" class="btn btn-primary">Add New Event</button>
+        <?php 
+            if($_SERVER['REQUEST_METHOD'] == "POST") {
+                $planner_name = $user_data['user_name'];
+                $broad_name = $_POST['broad_name'];
+                $broad_date = $_POST['broad_date'];
+                $time = $_POST['time'];
+                $ticket_price = $_POST['ticket_price'];
+                $type = $_POST['type'];
+                $location = $_POST['location'];
+        
+                $query = "insert into broadcasts (planner_name,broad_name,location,broad_date,time,ticket_price,type,trans_cost) values ('$planner_name','$broad_name','$location','$broad_date','$time','$ticket_price','$type',0)";
+                $result = mysqli_query($con, $query);
+        
+                if($result) {
+                    header('Location: my-requests.php');
+                    $error_msg = "Successfully added your event!";
+                } else {
+                    $error_msg =  "Error adding your event!";
+                }
+            }
+        ?>
+        </form>
+    </div>
+    </section>
 
   </main><!-- End #main -->
 
