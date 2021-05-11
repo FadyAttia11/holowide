@@ -5,6 +5,14 @@ session_start();
     include("functions.php");
 
     $user_data = check_login($con);
+    $event_id = $_GET["id"];
+
+    $event_query = "select * from broadcasts where id = '$event_id'";
+    $event = mysqli_query($con, $event_query);
+
+    if($event && mysqli_num_rows($event) > 0) {
+        $event_data = mysqli_fetch_assoc($event);
+    }
 
 ?>
 
@@ -53,7 +61,7 @@ session_start();
         <li><a href="new-event.php"><i class="bx bx-user"></i> <span>Add New Event</span></a></li>
         <li class="active"><a href="my-requests.php"><i class="bx bx-book-content"></i> <span>My Requests</span></a></li>
         <li><a href="marketing-plans.php"><i class="bx bx-server"></i> <span>Marketing Plans</span></a></li>
-        <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Planner: <?php echo $user_data['user_name'] ?></span></a></li>
+        <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
         <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
         </ul>
     </nav><!-- .nav-menu -->
@@ -66,32 +74,78 @@ session_start();
     <section id="portfolio-details" class="portfolio-details">
       <div class="container" data-aos="fade-up">
 
-        <div class="row">
-
+        <div class="row mb-5">
           <div class="col-lg-8">
-            <h2 class="portfolio-title">This is an example of portfolio detail</h2>
-            <div class="owl-carousel portfolio-details-carousel">
-              <img src="assets/img/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-details-2.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt="">
-            </div>
+            <h2 class="portfolio-title">Broadcast Name: <?php echo $event_data['broad_name'] ?></h2>
+            <img src=<?php echo "./uploads/". $event_data['image'] ?> class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-4 portfolio-info">
-            <h3>Project information</h3>
+            <h3>Event information</h3>
             <ul>
-              <li><strong>Category</strong>: Web design</li>
-              <li><strong>Client</strong>: ASU Company</li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+              <li><h6><strong>Planner Name</strong>: <?php echo $event_data['planner_name'] ?></h6></li>
+              <li><h6><strong>Location</strong>: <?php echo $event_data['location'] ?></h6></li>
+              <li><h6><strong>Broadcast Date</strong>: <?php echo $event_data['broad_date'] ?></h6></li>
+              <li><h6><strong>Broadcast Time</strong>: <?php echo $event_data['time'] ?></h6></li>
+              <li><h6><strong>Ticket Price</strong>: <?php echo $event_data['ticket_price'] ?> L.E</h6></li>
             </ul>
-
-            <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            </p>
           </div>
-
         </div>
+
+
+        <h3>Book This Event Online</h3>
+        <p>(Only Pay 10% of the cost as a deposit)</p>
+        <form method="post" class="m-auto">
+            <div class="form-group mt-2">
+                <label>Card holder's name</label>
+            <input type="text" placeholder="Card holder's name" class="form-control">
+            </div>
+            <div class="form-group">
+            <label>Card number</label>
+            <input type="number" placeholder="Card number" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Expire Date</label>
+                <input type="date" placeholder="dd/mm/yy" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>CVV</label>
+                <input type="text" placeholder="CVV" class="form-control">
+            </div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-primary m-auto" value="Book Event">
+            </div>
+            <?php
+                if($_SERVER['REQUEST_METHOD'] == "POST") {
+
+                    $get_money_query = "select * from users where user_role = 'admin'";
+                    $get_money = mysqli_query($con, $get_money_query);
+            
+                    if($get_money && mysqli_num_rows($get_money) > 0) {
+                        $current_money = mysqli_fetch_assoc($get_money);
+                        $deposit = $event_data['ticket_price'] * 0.1;
+                        $updated_money = $current_money['balance'] + $deposit;
+            
+                        $add_money_query = "update users set balance = '$updated_money' where user_role = 'admin'";
+                        $add_money = mysqli_query($con, $add_money_query);
+            
+                        if($add_money) {
+                            $broadcast_id = $event_data['id'];
+                            $customer_name = $user_data['user_name'];
+
+                            $query = "insert into bookings (broadcast_id,customer_name) values ('$broadcast_id','$customer_name')";
+                            $result = mysqli_query($con, $query);
+
+                            if($result) {
+                                header('Location: index.php');
+                            }
+                        } else {
+                            echo "error adding money to our account";
+                        }
+                    }
+                }
+            ?>
+        </form>
 
       </div>
     </section><!-- End Portfolio Details -->

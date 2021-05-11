@@ -49,7 +49,7 @@ session_start();
 
     <nav class="nav-menu">
         <ul>
-        <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="index.php"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li class="active"><a href="new-event.php"><i class="bx bx-user"></i> <span>Add New Event</span></a></li>
         <li><a href="my-requests.php"><i class="bx bx-book-content"></i> <span>My Requests</span></a></li>
         <li><a href="marketing-plans.php"><i class="bx bx-server"></i> <span>Marketing Plans</span></a></li>
@@ -99,10 +99,14 @@ session_start();
         <label>Event Location:</label>
         <textarea class="form-control mb-3" rows="5" name="location" placeholder="Ex: Cairo Festival Mall" required></textarea>
 
+        <label for="fileToUpload">Event Picture (Required): </label>
+        <input type="file" name="fileToUpload" class="mb-3" id="fileToUpload" required> <br>
+
 
         <button type="submit" class="btn btn-primary">Add New Event</button>
         <?php 
             if($_SERVER['REQUEST_METHOD'] == "POST") {
+                $image = "";
                 $planner_name = $user_data['user_name'];
                 $broad_name = $_POST['broad_name'];
                 $broad_date = $_POST['broad_date'];
@@ -110,8 +114,18 @@ session_start();
                 $ticket_price = $_POST['ticket_price'];
                 $type = $_POST['type'];
                 $location = $_POST['location'];
+
+                $target_dir = "uploads/";
+                $target_file = $target_dir . time() . basename($_FILES["fileToUpload"]["name"]);
+
+                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                    $image = time() . basename($_FILES["fileToUpload"]["name"]);
+                    $error_msg = "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                } else {
+                    $error_msg = "Sorry, there was an error uploading your image.";
+                }
         
-                $query = "insert into broadcasts (planner_name,broad_name,location,broad_date,time,ticket_price,type,trans_cost) values ('$planner_name','$broad_name','$location','$broad_date','$time','$ticket_price','$type',0)";
+                $query = "insert into broadcasts (planner_name,broad_name,location,broad_date,time,ticket_price,type,trans_cost,state,image) values ('$planner_name','$broad_name','$location','$broad_date','$time','$ticket_price','$type',0,'','$image')";
                 $result = mysqli_query($con, $query);
         
                 if($result) {

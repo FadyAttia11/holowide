@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+    include("connection.php");
+    include("functions.php");
+
+    $user_data = check_login($con);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,11 +49,10 @@
     <nav class="nav-menu">
       <ul>
         <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bx bx-server"></i> <span>Services</span></a></li>
-        <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        <li><a href="login.php"><i class="bx bx-file-blank"></i> <span>Login</span></a></li>
+        <li><a href="all-events.php"><i class="bx bx-user"></i> <span>View Upcoming Events</span></a></li>
+        <li><a href="booked-events.php"><i class="bx bx-user"></i> <span>My Booked Events</span></a></li>
+        <li><a href="#"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
+        <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
 

@@ -52,7 +52,7 @@ session_start();
         <li><a href="new-event.php"><i class="bx bx-user"></i> <span>Add New Event</span></a></li>
         <li><a href="my-requests.php"><i class="bx bx-book-content"></i> <span>My Requests</span></a></li>
         <li><a href="marketing-plans.php"><i class="bx bx-server"></i> <span>Marketing Plans</span></a></li>
-        <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Planner: <?php echo $user_data['user_name'] ?></span></a></li>
+        <li><a href="#"><i class="bx bx-envelope"></i> <span>Planner: <?php echo $user_data['user_name'] ?></span></a></li>
         <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->

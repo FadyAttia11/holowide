@@ -49,7 +49,7 @@ session_start();
 
     <nav class="nav-menu">
         <ul>
-        <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="index.php"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="new-event.php"><i class="bx bx-user"></i> <span>Add New Event</span></a></li>
         <li><a href="my-requests.php"><i class="bx bx-book-content"></i> <span>My Requests</span></a></li>
         <li class="active"><a href="marketing-plans.php"><i class="bx bx-server"></i> <span>Marketing Plans</span></a></li>
