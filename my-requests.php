@@ -71,10 +71,28 @@ session_start();
 
   <div class="container">
       <div class="portfolio-description">
-          <h2 class="mb-5">Pending Events</h2>
-          <div class="row">
+          <h2>Pending Events</h2>
+          <div class="row mt-3">
               <?php
                   while($row = mysqli_fetch_array($pending_events)) {
+              ?>
+
+              <div class="col-6">
+                  <a href=<?php echo "event-planner.php?id=". $row['id'] ?>><img src=<?php echo "./uploads/".$row['image'] ?> alt="" style="width: 50%; border: 1px solid #cda45e;"></a>
+                  <h5>Name: <?php echo $row['broad_name'] ?></h5>
+              </div>
+
+              <?php } ?>
+          </div>
+      </div>
+  </div>
+
+  <div class="container" style="margin-top: 150px;">
+      <div class="portfolio-description">
+          <h2>Accepted Events</h2>
+          <div class="row mt-3">
+              <?php
+                  while($row = mysqli_fetch_array($accepted_events)) {
               ?>
 
               <div class="col-6">
