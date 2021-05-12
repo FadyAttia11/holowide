@@ -5,7 +5,13 @@ session_start();
     include("functions.php");
 
     $user_data = check_login($con);
+    $planner_name = $user_data['user_name'];
 
+    $pending_events_query = "select * from broadcasts where planner_name = '$planner_name' and state = 'pending'";
+    $pending_events = mysqli_query($con, $pending_events_query);
+
+    $accepted_events_query = "select * from broadcasts where planner_name = '$planner_name' and state = 'accepted'";
+    $accepted_events = mysqli_query($con, $accepted_events_query);
 ?>
 
 <!DOCTYPE html>
@@ -60,43 +66,28 @@ session_start();
 
     </header><!-- End Header -->
 
-  <main id="main">
 
-    <!-- ======= Portfolio Details ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container" data-aos="fade-up">
+<main id="main" style="margin-top: 100px;">
 
-        <div class="row">
+  <div class="container">
+      <div class="portfolio-description">
+          <h2 class="mb-5">Pending Events</h2>
+          <div class="row">
+              <?php
+                  while($row = mysqli_fetch_array($pending_events)) {
+              ?>
 
-          <div class="col-lg-8">
-            <h2 class="portfolio-title">This is an example of portfolio detail</h2>
-            <div class="owl-carousel portfolio-details-carousel">
-              <img src="assets/img/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-details-2.jpg" class="img-fluid" alt="">
-              <img src="assets/img/portfolio/portfolio-details-3.jpg" class="img-fluid" alt="">
-            </div>
+              <div class="col-6">
+                  <a href=<?php echo "event.php?id=". $row['id'] ?>><img src=<?php echo "./uploads/".$row['image'] ?> alt="" style="width: 50%; border: 1px solid #cda45e;"></a>
+                  <h5>Name: <?php echo $row['broad_name'] ?></h5>
+              </div>
+
+              <?php } ?>
           </div>
-
-          <div class="col-lg-4 portfolio-info">
-            <h3>Project information</h3>
-            <ul>
-              <li><strong>Category</strong>: Web design</li>
-              <li><strong>Client</strong>: ASU Company</li>
-              <li><strong>Project date</strong>: 01 March, 2020</li>
-              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-            </ul>
-
-            <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-            </p>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End Portfolio Details -->
+  </div>
 
-  </main><!-- End #main -->
+</main>
 
   <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
   <div id="preloader"></div>
