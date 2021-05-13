@@ -201,7 +201,7 @@ session_start();
               <input type="hidden" name="plan_name" value="Pro">
               <!-- Button to Open the Modal -->
               <button type="button" class="btn btn-block btn-primary text-uppercase" data-toggle="modal" data-target="#myModal1">
-                Get The Plus Plan
+                Get The Pro Plan
               </button>
 
               <!-- The Modal -->
@@ -269,7 +269,7 @@ session_start();
               <input type="hidden" name="plan_name" value="Ultimate">
               <!-- Button to Open the Modal -->
               <button type="button" class="btn btn-block btn-primary text-uppercase" data-toggle="modal" data-target="#myModal2">
-                Get The Plus Plan
+                Get The Ultimate Plan
               </button>
 
               <!-- The Modal -->

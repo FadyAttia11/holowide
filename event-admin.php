@@ -58,11 +58,11 @@ session_start();
 
   <nav class="nav-menu">
     <ul>
-      <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+      <li><a href="index.php"><i class="bx bx-home"></i> <span>Home</span></a></li>
       <li class="active"><a href="cost-determ.php"><i class="bx bx-user"></i> <span>Cost Determination</span></a></li>
       <li><a href="accepted-events.php"><i class="bx bx-book-content"></i> <span>Accepted Events</span></a></li>
       <li><a href="accepted-plans.php"><i class="bx bx-server"></i> <span>Accepted Marketing Plans</span></a></li>
-      <li><a href="#"><i class="bx bx-envelope"></i> <span>Admin: <?php echo $user_data['user_name'] ?></span></a></li>
+      <li><a href="#"><i class="bx bx-envelope"></i> <span>Balance: <?php echo $user_data['balance'] ?> L.E</span></a></li>
       <li><a href="logout.php"><i class="bx bx-file-blank"></i> <span>Logout</span></a></li>
     </ul>
   </nav><!-- .nav-menu -->
