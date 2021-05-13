@@ -15,6 +15,9 @@ session_start();
         $event_data = mysqli_fetch_assoc($event);
     }
 
+    $event_bookings_query = "select * from bookings where broadcast_id = '$event_id'";
+    $event_bookings = mysqli_query($con, $event_bookings_query);
+
 ?>
 
 <!DOCTYPE html>
@@ -153,6 +156,16 @@ session_start();
 
         <?php } else if($event_data['state'] == 'accepted') { ?>
             <h2 class="mt-5">You Accepted The admin offer for this event!</h2>
+            <h4 class="mt-5">Bookings for this Event: </h4>
+              
+              <?php
+                  while($row = mysqli_fetch_array($event_bookings)) {
+              ?>
+
+              <p><?php echo $row['customer_name'] ?></p>
+
+              <?php } ?>
+
         <?php } ?>
 
       </div>

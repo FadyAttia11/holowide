@@ -96,7 +96,7 @@ session_start();
               ?>
 
               <div class="col-6">
-                  <a href=<?php echo "event.php?id=". $row['id'] ?>><img src=<?php echo "./uploads/".$row['image'] ?> alt="" style="width: 50%; border: 1px solid #cda45e;"></a>
+                  <a href=<?php echo "event-planner.php?id=". $row['id'] ?>><img src=<?php echo "./uploads/".$row['image'] ?> alt="" style="width: 50%; border: 1px solid #cda45e;"></a>
                   <h5>Name: <?php echo $row['broad_name'] ?></h5>
               </div>
 
