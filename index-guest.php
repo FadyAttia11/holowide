@@ -72,7 +72,8 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>We offer you a great service that you can use to broadcast your Hologram event or the book the public events available through 
+          our web app. with various event planners and a lot of different types of events to cover every topic.</p>
         </div>
 
         <div class="row">
@@ -80,32 +81,23 @@
             <img src="assets/img/profile-img.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>UI/UX Designer &amp; Web Developer.</h3>
+            <h3>Hologram Event Planning service</h3>
             <p class="font-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              You can use our service to host your hologram event and to get customers to go to your event if you want to make it public.
             </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 1 May 1995</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +123 456 7890</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : New York, USA</li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 30</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Master</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong> email@example.com</li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Available</li>
-                </ul>
-              </div>
-            </div>
+              
+            <ul>
+              <li><i class="icofont-rounded-right"></i> <strong>Add</strong> As Many events as you like, and just pay for the ones that will be held.</li>
+              <li><i class="icofont-rounded-right"></i> <strong>Choose</strong> wheater you want the event to be public or private.</li>
+              <li><i class="icofont-rounded-right"></i> <strong>Wait</strong> for admin to determine the transmission cost and accept or decline it.</li>
+              <li><i class="icofont-rounded-right"></i> <strong>Market</strong> your event with our marketing plans to get people to know about your event.</li>
+            </ul>
+          
+            
             <p>
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+              You can use our marketing plans to market your event through social media with our professional marketing teams to get your event
+              to as many people as possible to gain profits. our plans are fair and good and people gained a lot of benefits using them before 
+              so i highly recommend you to try them out.
             </p>
           </div>
         </div>
@@ -119,7 +111,8 @@
 
         <div class="section-title">
           <h2>Facts</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>We hosted a lot of successful events in the past and the just the numbers speaks alone about our success and tell you our story, 
+          check them out to see how many events we had held and clients we made happy.</p>
         </div>
 
         <div class="row">
@@ -127,16 +120,16 @@
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="icofont-simple-smile"></i>
-              <span data-toggle="counter-up">232</span>
-              <p>Happy Clients</p>
+              <span data-toggle="counter-up">68</span>
+              <p>Held Events</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="icofont-document-folder"></i>
-              <span data-toggle="counter-up">521</span>
-              <p>Projects</p>
+              <span data-toggle="counter-up">90</span>
+              <p>Event Planner</p>
             </div>
           </div>
 
@@ -144,15 +137,15 @@
             <div class="count-box">
               <i class="icofont-live-support"></i>
               <span data-toggle="counter-up">1,463</span>
-              <p>Hours Of Support</p>
+              <p>Customers</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="icofont-users-alt-5"></i>
-              <span data-toggle="counter-up">15</span>
-              <p>Hard Workers</p>
+              <span data-toggle="counter-up">150,000</span>
+              <p>Social Media Profits</p>
             </div>
           </div>
 
@@ -161,79 +154,16 @@
       </div>
     </section><!-- End Facts Section -->
 
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">PHP <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">WordPress/CMS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Photoshop <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Gallery</h2>
+          <p>Check out the pictures from our previously held events to see closely what we do and what we offer you and what we are capable
+          of doing, these all are live photos from events that we held on the past.</p>
         </div>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
@@ -356,7 +286,8 @@
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>We offer you a lot of different services that suits all your needs. wheater you are looking for to attend a hologram event, 
+          or you are looking forward to host your event, this is the right place for you. </p>
         </div>
 
         <div class="row">
@@ -369,8 +300,8 @@
                 </svg>
                 <i class="bx bxl-dribbble"></i>
               </div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="">Add New Events</a></h4>
+              <p>As an event planner, you can add new event and choose wheater you want it to be public or private.</p>
             </div>
           </div>
 
@@ -382,8 +313,8 @@
                 </svg>
                 <i class="bx bx-file"></i>
               </div>
-              <h4><a href="">Sed Perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <h4><a href="">Get Marketing Plans</a></h4>
+              <p>Get marketing plans and choose from them to market all your upcoming events.</p>
             </div>
           </div>
 
@@ -395,8 +326,8 @@
                 </svg>
                 <i class="bx bx-tachometer"></i>
               </div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <h4><a href="">Unlimited Events</a></h4>
+              <p>As an event planner, you can host as many events as you want, it's up to you.</p>
             </div>
           </div>
 
@@ -408,8 +339,8 @@
                 </svg>
                 <i class="bx bx-layer"></i>
               </div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <h4><a href="">Book Events Online</a></h4>
+              <p>You Can Book a specific event online and you only pay 10% of his ticket as a deposit.</p>
             </div>
           </div>
 
@@ -421,8 +352,8 @@
                 </svg>
                 <i class="bx bx-slideshow"></i>
               </div>
-              <h4><a href="">Dele Cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+              <h4><a href="">Public Or Private</a></h4>
+              <p>You can choose to make your event public for anyone to reserve or private.</p>
             </div>
           </div>
 
@@ -434,8 +365,8 @@
                 </svg>
                 <i class="bx bx-arch"></i>
               </div>
-              <h4><a href="">Divera Don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+              <h4><a href="">View Upcoming Events</a></h4>
+              <p>View Upcoming events and determine which you you want to attend in the future.</p>
             </div>
           </div>
 
