@@ -58,7 +58,7 @@ session_start();
 
   <nav class="nav-menu">
     <ul>
-      <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+      <li><a href="index.php"><i class="bx bx-home"></i> <span>Home</span></a></li>
       <li class="active"><a href="all-events.php"><i class="bx bx-user"></i> <span>View Upcoming Events</span></a></li>
       <li><a href="booked-events.php"><i class="bx bx-book-content"></i> <span>My Booked Events</span></a></li>
       <li><a href="#"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
@@ -133,7 +133,7 @@ session_start();
             
                     if($get_money && mysqli_num_rows($get_money) > 0) {
                         $current_money = mysqli_fetch_assoc($get_money);
-                        $deposit = $event_data['ticket_price'] * 0.1;
+                        $deposit = $event_data['ticket_price'];
                         $updated_money = $current_money['balance'] + $deposit;
             
                         $add_money_query = "update users set balance = '$updated_money' where user_role = 'admin'";

@@ -6,7 +6,7 @@ session_start();
 
     $user_data = check_login($con);
 
-    $all_events_query = "select * from broadcasts where type = 'Public'";
+    $all_events_query = "select * from broadcasts where type = 'Public' and state = 'accepted'";
     $all_events = mysqli_query($con, $all_events_query);
 
 ?>
@@ -52,7 +52,7 @@ session_start();
 
   <nav class="nav-menu">
     <ul>
-      <li><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+      <li><a href="index.php"><i class="bx bx-home"></i> <span>Home</span></a></li>
       <li class="active"><a href="all-events.php"><i class="bx bx-user"></i> <span>View Upcoming Events</span></a></li>
       <li><a href="booked-events.php"><i class="bx bx-book-content"></i> <span>My Booked Events</span></a></li>
       <li><a href="#"><i class="bx bx-envelope"></i> <span>Customer: <?php echo $user_data['user_name'] ?></span></a></li>
